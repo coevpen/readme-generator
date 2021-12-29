@@ -1,3 +1,16 @@
-# Readme Generator
-  ## It generates a README file based on the info the user provides.
+# Random Generator
+  ## Description
+  A README.md file is created based on the user's input.
+
+  ## Installation
+
+  ## Usage
+
+  ## License
+
+  ## Contact
+
+  ## Contribution
+
+  ## Tests
 
