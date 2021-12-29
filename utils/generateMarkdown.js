@@ -18,3 +18,10 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
+
+
+/*
+  NOTE TO SELF: generateMarkdown will receive the data, within this, you will call the functions
+  to create the licenses where they should go on the readme. so like ${renderLicensesSection(license)}
+
+*/

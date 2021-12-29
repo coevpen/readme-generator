@@ -1,15 +1,16 @@
-// TODO: Include packages needed for this application
+//Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
 const questions = ['What is the title of your project?', 'Enter a description of the project', 'Enter installation instructions',
     'Provide instructions and examples for us','What license is used?', 'Please enter your Github username', 'Please enter your email address',
     'Please enter contribution guidelines', 'Is there any test data?'];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    fs.writeFile('README.md', data, err => {
+// Create a function to write README file
+function writeToFile(data) {
+    fs.writeFile('./dist/README.md', data, err => {
         if(err){
             console.log(err);
         }
@@ -18,16 +19,36 @@ function writeToFile(fileName, data) {
 };
 
 // TODO: Create a function to initialize app
-function init() {
-    inquirer
+const init = () => {
+    return inquirer
         .prompt([
-        /* Pass your questions in here */
+            {
+                type: 'input',
+                name: 'title',
+                message: questions[0],
+                validate: titleInput => {
+                    if(titleInput){
+                        return true;
+                    }
+                    else{
+                        console.log('Please enter a project title.');
+                        return false;
+                    }
+                }
+            }
         ])
-        .then((answers) => {
-        // Use user feedback for... whatever!!
-        })
-
 };
 
 // Function call to initialize app
-init();
+init()
+    .then(data =>{
+        console.log(data);
+        return generateMarkdown(data);
+    })
+    .then(readmeFile =>{
+        console.log(readmeFile);
+        return writeToFile(readmeFile);
+    })
+    .catch(err => {
+        console.log(err);
+    });
