@@ -1,6 +1,8 @@
-# Random Generator
+# Readme Generator
   ## Description
-  It randomly generates!
+  It generates a readme file based on the project info data input by the user.
+
+  
 
   ## Table of Contents
   * [Installation](#installation)
@@ -11,15 +13,15 @@
   * [Tests](#tests)
 
   ## Installation
-  install with npm
+  Inquirer is needed to install. to install, type 'npm install' into git.
 
   ## Usage
   N/A
 
-  ## License
+  
 
   ## Questions
-  If you have any additional questions, you can reach me via my [Github](https://github.com/coevpen) or by [email](mailto:somethin@gmail.com). 
+  If you have any additional questions, you can reach me via my [Github](https://github.com/coevpen) or by [email](mailto:something@gmail.com). 
   
   ## Contribution
   N/A
