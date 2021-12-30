@@ -27,11 +27,18 @@ function renderLicenseSection(license) {
     return '';
   }
   else{
-    return `## License
-    `;
+    return `## License`;
   }
 }
 
+function licenseToC(license){
+  if(license == 'None'){
+    return '';
+  }
+  else{
+    return ` * [License](#license)`;
+  }
+}
 
 // TODO: Create a function to generate markdown for README - add license badge near top
 function generateMarkdown(data) {
@@ -44,7 +51,7 @@ function generateMarkdown(data) {
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
-  * [License](#license)
+  ${licenseToC(data.license)}
   * [Questions](#contact)
   * [Contribution](#contribution)
   * [Tests](#tests)
