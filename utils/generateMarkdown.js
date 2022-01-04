@@ -1,33 +1,56 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
+
   if(license == 'None'){
     return '';
   }
+  else if(license == 'MIT'){
+    return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]`;
+  }
+  else if(license == 'PDDL'){
+    return `[![License: ODbL](https://img.shields.io/badge/License-PDDL-brightgreen.svg)]`;
+  }
   else{
-
+    return `[![License: Artistic-2.0](https://img.shields.io/badge/License-Artistic_2.0-0298c3.svg)]`;
   }
 }
 
-// TODO: Create a function that returns the license link
+// returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if(license == 'None'){
     return '';
   }
+  else if(license == 'MIT'){
+    return `(https://opensource.org/licenses/MIT)`;
+  }
+  else if(license == 'PDDL'){
+    return `(https://opendatacommons.org/licenses/pddl/)`;
+  }
   else{
-
+    return `(https://opensource.org/licenses/Artistic-2.0)`;
   }
 }
 
-// TODO: Create a function that returns the license section of README
+// returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if(license == 'None'){
     return '';
   }
+  else if(license == 'MIT'){
+    return `## License
+    MIT License`;
+  }
+  else if(license == 'PDDL'){
+    return `## License
+    Public Domain Dedication and License (PDDL)`;
+  }
   else{
-    return `## License`;
+    return `## License
+    The Artistic LIcense 2.0
+    `;
   }
 }
 
@@ -36,17 +59,17 @@ function licenseToC(license){
     return '';
   }
   else{
-    return ` * [License](#license)`;
+    return `* [License](#license)`;
   }
 }
 
-// TODO: Create a function to generate markdown for README - add license badge near top
+// generates markdown for README
 function generateMarkdown(data) {
   return `# ${data.title}
   ## Description
   ${data.description}
 
-  ${renderLicenseBadge(data.license)}
+  ${renderLicenseBadge(data.license)}${renderLicenseLink(data.license)}
 
   ## Table of Contents
   * [Installation](#installation)
@@ -76,10 +99,3 @@ function generateMarkdown(data) {
 }
 
 module.exports = generateMarkdown;
-
-
-/*
-  NOTE TO SELF: generateMarkdown will receive the data, within this, you will call the functions
-  to create the licenses where they should go on the readme. so like ${renderLicensesSection(license)}
- 
-*/

@@ -1,14 +1,14 @@
-//Include packages needed for this application
+// Includes packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// Create an array of questions for user input
+// an array of questions for user input
 const questions = ['What is the title of your project?', 'Enter a description of the project:', 'Enter installation instructions:',
     'Provide usage instructions and examples for us:','What license is used?', 'Please enter your Github username:', 'Please enter your email address:',
     'Please enter contribution guidelines:', 'Is there any test data?'];
 
-// Create a function to write README file
+// write README file
 function writeToFile(data) {
     fs.writeFile('./dist/README.md', data, err => {
         if(err){
@@ -18,7 +18,7 @@ function writeToFile(data) {
     });
 };
 
-// TODO: Create a function to initialize app
+// function to initialize app
 const init = () => {
     return inquirer
         .prompt([
@@ -74,7 +74,7 @@ const init = () => {
                 type: 'checkbox',
                 name: 'license',
                 message: questions[4],
-                choices: ['placeholder 1', 'placeholder 2','placeholder 3', 'None']
+                choices: ['MIT', 'PDDL','Artistic License 2.0', 'None']
                 
             },
             {
