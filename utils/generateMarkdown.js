@@ -41,15 +41,15 @@ function renderLicenseSection(license) {
   }
   else if(license == 'MIT'){
     return `## License
-    MIT License`;
+    This project is licensed under the MIT License`;
   }
   else if(license == 'PDDL'){
     return `## License
-    Public Domain Dedication and License (PDDL)`;
+    This project is licensed under the Public Domain Dedication and License (PDDL)`;
   }
   else{
     return `## License
-    The Artistic LIcense 2.0
+    This project is licensed under the The Artistic LIcense 2.0
     `;
   }
 }
@@ -80,6 +80,7 @@ function generateMarkdown(data) {
   * [Tests](#tests)
 
   ## Installation
+  To install necessary dependencies, run the following command:
   ${data.installation}
 
   ## Usage
