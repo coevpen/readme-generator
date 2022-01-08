@@ -49,7 +49,7 @@ function renderLicenseSection(license) {
   }
   else{
     return `## License
-    This project is licensed under the The Artistic LIcense 2.0
+    This project is licensed under the The Artistic License 2.0
     `;
   }
 }
@@ -77,10 +77,10 @@ function generateMarkdown(data) {
   ${licenseToC(data.license)}
   * [Questions](#contact)
   * [Contribution](#contribution)
-  * [Tests](#tests)
+  * [Testing](#testing)
 
   ## Installation
-  To install necessary dependencies, run the following command:
+  To install necessary dependencies, run the following command:\n
   ${data.installation}
 
   ## Usage
@@ -94,7 +94,7 @@ function generateMarkdown(data) {
   ## Contribution
   ${data.contribution}
 
-  ## Tests
+  ## Testing
   ${data.test}
 `;
 }

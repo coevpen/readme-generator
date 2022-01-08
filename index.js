@@ -123,11 +123,9 @@ const init = () => {
 // Function call to initialize app
 init()
     .then(data =>{
-        console.log(data);
         return generateMarkdown(data);
     })
     .then(readmeFile =>{
-        console.log(readmeFile);
         return writeToFile(readmeFile);
     })
     .catch(err => {
