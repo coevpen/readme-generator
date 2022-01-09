@@ -11,8 +11,11 @@
 
   ```npm install inquirer```
 
-  ## Screenshot
+  ## Screenshot and Walkthrough
   ![](./assets/screenshot.jpg)
+  
+ [Walkthrough Video](https://watch.screencastify.com/v/Fj7fDm0OvXiGcauZbGyl)
+  
 
   ## Questions
   If you have any additional questions, you can reach me via my [Github](https://github.com/coevpen). 
